@@ -1,0 +1,14 @@
+<p>sample works!</p>
+<p>{{InputValue}}</p>
+<div *ngIf="condition; else elseBlock">
+    Content to be displayed when condition is true.
+  </div>
+<ng-template #elseBlock>
+    Content to be displayed when condition is false.
+</ng-template>
+<input type="text" #inputtemp>
+<button (click)="Passinput(inputtemp.value)">
+    click me again
+</button>
+<input type="text" #inputBox>
+<button (click)="sendBtnClicked()">Send data</button>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ApiService } from './api.service';
-import { Subscription } from 'rxjs';
+import { SampleService } from './18.01.2024/sample.service';
 
 @Component({
   selector: 'app-root',
@@ -8,29 +7,19 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'api';
-  private subscription: Subscription | any;
-   constructor(private apiservice:ApiService){
-
+  title = 'assignment_one';
+  title_sample = "Hi From Parent"
+  selectedLink: string | undefined;
+  value= 1;
+  DeleteChild() {
+    this.value=0;
   }
-  OnClick(){
-    this.subscription= this.apiservice.getData().subscribe({
-    next: (data) =>{
-      console.log(data);
-    },
-    error: (error: Error)=>{
-      alert('Error has occured'+ error.message);
-    },
-    complete: ()=>{
-      console.log('completed');
-    }
-  });
-  };
-
-  // ngOnDestroy(){
-  //   this.subscription.unsubscribe();
-  // }
-  dynamic(){
-    console.log('HI')
+  loadContent(link: string) {
+    this.selectedLink = link;
+    console.log(link)
+  }
+  dataArray: any[] = [];
+  constructor(sampleservice :SampleService){
+    this.dataArray = sampleservice.dataArray
   }
 }

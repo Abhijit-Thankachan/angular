@@ -1,0 +1,23 @@
+.top-bar {
+    background-color: beige;
+    color: #362323;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .profile-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .profile-name {
+    margin-right: 20px;
+  }
+
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+  }

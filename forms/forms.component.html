@@ -1,0 +1,29 @@
+<p>forms works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup] ="form">
+    <div>
+        <input class="form-control" type="text" placeholder="Enter Firstname" formControlName = "firstName"/>
+        <span class="form_error" *ngIf ="form.get('firstName')?.invalid && form.get('firstName')?.touched ">Enter Firstname</span>
+    </div>
+    <div>
+        <input class="form-control" type="text" placeholder="Enter Lastname" formControlName = "lastName"/>
+        <span class="form_error" *ngIf ="form.get('lastName')?.invalid && form.get('lastName')?.touched ">Enter Lastname</span>
+
+    </div>
+    <div>
+        <input class="form-control" type="text" placeholder="Enter Email" formControlName = "email"/>
+        <span class="form_error" *ngIf ="form.get('email')?.invalid && form.get('email')?.touched ">Enter Email</span>
+    </div>
+    <div formGroupName="address">
+        <p>Address</p>
+        <div>
+            <input class="form-control" type="text" placeholder="City" formControlName = "city"/>
+            <span class="form_error" *ngIf ="form.get('address.city')?.invalid && form.get('address.city')?.touched ">Enter City</span>
+        </div>
+        <div>
+            <input class="form-control" type="text" placeholder="State" formControlName = "state"/>
+            <span class="form_error" *ngIf ="form.get('address.state')?.invalid && form.get('address.state')?.touched ">Enter City</span>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" [disabled]="form.get('address')?.invalid">Click</button>
+</form>

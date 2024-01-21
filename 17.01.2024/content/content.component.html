@@ -1,0 +1,16 @@
+<!-- content.component.html -->
+<div [ngSwitch]="selectedLink">
+    <div *ngSwitchCase="'create-request'">
+      <p>Content for Create Request</p>
+    </div>
+    <div *ngSwitchCase="'settlement'">
+      <p>Content for Settlement</p>
+    </div>
+    <div *ngSwitchCase="'upload-invoices'">
+      <p>Content for Upload Invoices</p>
+    </div>
+    <div *ngSwitchDefault>
+      <p>No content selected</p>
+    </div>
+  </div>
+  
